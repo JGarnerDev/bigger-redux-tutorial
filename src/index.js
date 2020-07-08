@@ -3,14 +3,14 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 
-const App = () => {
-	return <div></div>;
-};
+import reducers from "./reducers";
+
+import App from "./containers/App";
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 ReactDOM.render(
-	<Provider store={createStoreWithMiddleware()}>
+	<Provider store={createStoreWithMiddleware(reducers)}>
 		<App />
 	</Provider>,
 
